@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import ContactList from './components/ContactList.jsx';
+import SelectedContact from './components/SelectedContact.jsx'; 
 
 
 
@@ -19,7 +20,7 @@ function App() {
         if selectedContactId is falsey, render the ContactList component
       */}
       {selectedContactID ? (
-        <div>Selected Contact View</div>
+        <SelectedContact selectedContactID={selectedContactID} setSelectedContactID={selectedContactID}/>
       ) : (
         <ContactList setSelectedContactID={setSelectedContactID}></ContactList>
       )}
